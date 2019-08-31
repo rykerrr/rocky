@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f90323c2eb014b49a8538eaa61ab8ed, type: 3}
+  m_Name: BaldPlayer
+  m_EditorClassIdentifier: 
+  sprt: {fileID: 21300000, guid: b782e8d5fbe943641a7fa713f2359a47, type: 3}
+  dashLength: 17
+  dashRegen: 1
+  dashDmg: 0
+  spd: 11
