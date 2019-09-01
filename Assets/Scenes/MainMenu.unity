@@ -2240,8 +2240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.600006, y: 30.030006}
-  m_SizeDelta: {x: -63.87, y: -76.04}
+  m_AnchoredPosition: {x: -2.600006, y: 41.999977}
+  m_SizeDelta: {x: -63.87, y: -99.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433396531
 MonoBehaviour:
@@ -2265,7 +2265,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f03c5c651d777804c95b413ad22efedb, type: 3}
-    m_FontSize: 10
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2273,7 +2273,7 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Name: Ghost Blade'
@@ -7841,8 +7841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.600006, y: 0.08000183}
-  m_SizeDelta: {x: -63.87, y: -73.75}
+  m_AnchoredPosition: {x: -2.600006, y: 5.57}
+  m_SizeDelta: {x: -63.87, y: -98.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1238364308
 MonoBehaviour:
@@ -7866,7 +7866,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f03c5c651d777804c95b413ad22efedb, type: 3}
-    m_FontSize: 10
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -7875,7 +7875,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Damage: 53'
 --- !u!222 &1238364309
@@ -12689,8 +12689,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.600006, y: -28.800003}
-  m_SizeDelta: {x: -63.87, y: -78.17}
+  m_AnchoredPosition: {x: -2.600006, y: -35.279984}
+  m_SizeDelta: {x: -63.87, y: -91.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005984382
 MonoBehaviour:
@@ -12714,7 +12714,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f03c5c651d777804c95b413ad22efedb, type: 3}
-    m_FontSize: 10
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -12723,7 +12723,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Res gain: 34'
 --- !u!222 &2005984383
