@@ -129,16 +129,47 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private IEnumerator AddActionToGamemaster()
+    {
+        while(GameMaster.Instance == null)
+        {
+            Debug.Log("GameMaster.Instance is null");
+            yield return new WaitForSecondsRealtime(1f);
+        }
+
+        while(GameMaster.Instance.hud == null)
+        {
+            Debug.Log("GameMaster.Instance.hud is null");
+            yield return new WaitForSecondsRealtime(1f);
+        }
+
+        GameMaster.Instance.hud.DashEvent = Dash;
+    }
+
     private void OnEnable()
     {
-        GameMaster.Instance.hud.DashEvent += Dash;
+        if (GameMaster.Instance == null)
+        {
+            StartCoroutine(AddActionToGamemaster());
+            return;
+        }
+        else
+        {
+            if (GameMaster.Instance.hud == null)
+            {
+                StartCoroutine(AddActionToGamemaster());
+                return;
+            }
+        }
+
+        GameMaster.Instance.hud.DashEvent = Dash;
     }
 
     private void OnDisable()
     {
-        if(GameMaster.Instance)
+        if (GameMaster.Instance)
         {
-            GameMaster.Instance.hud.DashEvent -= Dash;
+            GameMaster.Instance.hud.DashEvent = delegate { };
         }
     }
 }

@@ -115,8 +115,39 @@ public class Boomerang : MonoBehaviour
         }
     }
 
+    private IEnumerator AddActionToGamemaster()
+    {
+        while (GameMaster.Instance == null)
+        {
+            Debug.Log("GameMaster.Instance is null");
+            yield return new WaitForSecondsRealtime(1f);
+        }
+
+        while (GameMaster.Instance.hud == null)
+        {
+            Debug.Log("GameMaster.Instance.hud is null");
+            yield return new WaitForSecondsRealtime(1f);
+        }
+
+        GameMaster.Instance.hud.AttackEvent = Throw;
+    }
+
     private void OnEnable()
     {
+        if (GameMaster.Instance == null)
+        {
+            StartCoroutine(AddActionToGamemaster());
+            return;
+        }
+        else
+        {
+            if (GameMaster.Instance.hud == null)
+            {
+                StartCoroutine(AddActionToGamemaster());
+                return;
+            }
+        }
+
         GameMaster.Instance.hud.AttackEvent = Throw;
     }
 

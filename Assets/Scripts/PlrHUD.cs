@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class PlrHUD : MonoBehaviour
 {
     public Action AttackEvent = delegate { };
-    public event Action DashEvent = delegate { };
+    public Action DashEvent = delegate { };
     public static PlrHUD Instance { get; private set; }
     public static Hat hat;
     public Transform weaponChangeBox;
@@ -22,6 +22,7 @@ public class PlrHUD : MonoBehaviour
     [SerializeField] private GameObject[] textGuiders;
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject unallocatedStatPointsNotifier;
     [SerializeField] private Transform levelUpPart;
     [SerializeField] private Transform waveStartButton;
     [SerializeField] private Transform statManagerUI;
@@ -141,15 +142,17 @@ public class PlrHUD : MonoBehaviour
 
         if (Player.Stats.statPointsLeft > 0)
         {
+            unallocatedStatPointsNotifier.SetActive(true);
             EnableOrDisableStatIncs(true);
-            statsPanelOpennerImage.color = Color.green;
-            statsPanelOpennerImage.color = new Color(statsPanelOpennerImage.color.r, statsPanelOpennerImage.color.g, statsPanelOpennerImage.color.b, 0.65f);
+            statsPanelOpennerImage.color = Color.blue;
+            statsPanelOpennerImage.color = new Color(statsPanelOpennerImage.color.r, statsPanelOpennerImage.color.g, statsPanelOpennerImage.color.b, 0.8f);
         }
         else
         {
+            unallocatedStatPointsNotifier.SetActive(false);
             EnableOrDisableStatIncs(false);
-            statsPanelOpennerImage.color = Color.white;
-            statsPanelOpennerImage.color = new Color(statsPanelOpennerImage.color.r, statsPanelOpennerImage.color.g, statsPanelOpennerImage.color.b, 0.2f);
+            statsPanelOpennerImage.color = Color.gray;
+            statsPanelOpennerImage.color = new Color(statsPanelOpennerImage.color.r, statsPanelOpennerImage.color.g, statsPanelOpennerImage.color.b, 0.6f);
         }
     }
 

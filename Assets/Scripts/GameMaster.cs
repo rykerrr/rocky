@@ -40,6 +40,7 @@ public class GameMaster : MonoBehaviour
     #endregion
     public static int startLives = 3;
     public static int weaponIdOnStart;
+    public static int timeForAds;
     public static bool normalStart = false;
 
     [SerializeField] private Transform[] plrRespawnPoints;
@@ -71,6 +72,7 @@ public class GameMaster : MonoBehaviour
 
     private void Awake()
     {
+        turnedOff = false;
         instance = this;
 
         if (!hud) hud = FindObjectOfType<PlrHUD>();
@@ -198,7 +200,19 @@ public class GameMaster : MonoBehaviour
     {
         Player.Stats.name = null;
         Player.Stats.hat = null;
-        AdsManager.Instance.ShowRegularAd(OnDeathAdClosed);
+
+        hud.Pause(1f);
+
+        if (timeForAds == 1)
+        {
+            timeForAds = 0;
+            AdsManager.Instance.ShowRegularAd(OnDeathAdClosed);
+        }
+        else
+        {
+            timeForAds++;
+            OnDeathAdClosed();
+        }
     }
 
     private void OnDeathAdClosed(ShowResult so = 0)
@@ -244,7 +258,10 @@ public class GameMaster : MonoBehaviour
 
     private void OnDisable()
     {
-        AudioMaster.Instance.StopPlaying("MatchTheme");
+        if (AudioMaster.Instance)
+        {
+            AudioMaster.Instance.StopPlaying("MatchTheme");
+        }
     }
 
     private void OnDestroy()

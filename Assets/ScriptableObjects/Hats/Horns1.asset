@@ -16,7 +16,8 @@ MonoBehaviour:
   characterDesc: Yagekvap is a viking warrior who wasn't born with the greatest genes,
     but made up for it with his hard work. He learned to move in ways most vikings
     weren't able to, and focused on being fast and agile, outmaneuvering his enemies.
-    (The faster of the two characters, faster dash and faster regen, but also weaker)
+    (Sylvia's younger brother, the faster of the two characters, faster dash and
+    faster regen, but also weaker)
   sprt: {fileID: 21300000, guid: 192ff02f7baba1d4aa579c32c204bd6a, type: 3}
   dashLength: 20
   dashRegen: 2

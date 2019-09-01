@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Horns2
   m_EditorClassIdentifier: 
   characterName: Sylvia
-  characterDesc: Sylvia was born as the daughter of the viking king, focused on being
-    a warrior all her life. She has wielded numerous weapons, and became proficient
-    in hunting over time, as her father. (The stronger but also slower of the two
-    characters, dashes are longer and deal more damage, but regen and speed are slower)
+  characterDesc: Sylvia was born as the daughter of the viking king, adopted into
+    the same family as Yagekvap. Focused on being a warrior all her life. She has
+    wielded numerous weapons, and became proficient in hunting over time, as her
+    father. (Yagekvap's sister, the stronger but also slower of the two characters,
+    dashes are longer and deal more damage, but regen and speed are slower)
   sprt: {fileID: 21300000, guid: b7f0338945239704397d8986fcfc8f6a, type: 3}
   dashLength: 30
   dashRegen: 4

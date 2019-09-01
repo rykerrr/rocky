@@ -13,6 +13,7 @@ public class MenuCanvas : MonoBehaviour
     [SerializeField] private GameObject getMoreRandomStats;
     [SerializeField] private GameObject notEnoughMoneyPrompt;
     [SerializeField] private GameObject characterInfoPanel;
+    [SerializeField] private GameObject storyPanel;
     [SerializeField] private Image nameInputFieldImage;
     // public InputField nameField;
     [SerializeField] private Button confirmButton;
@@ -38,6 +39,7 @@ public class MenuCanvas : MonoBehaviour
     [SerializeField] private Text characterName;
     [SerializeField] private Text characterDescription;
 
+    private static bool isGameStarted = false;
     private int wepID;
 
     [Header("Ad rewards")]
@@ -74,6 +76,12 @@ public class MenuCanvas : MonoBehaviour
 
     private void Update()
     {
+        if (!isGameStarted)
+        {
+            StoryPanelActivation(true);
+            isGameStarted = true;
+        }
+
         if (isGainingCoins)
         {
             if (coinGain < 0)
@@ -525,6 +533,18 @@ public class MenuCanvas : MonoBehaviour
         coinGain = 0;
     }
 
+    public void StoryPanelActivation(bool open)
+    {
+        if (open)
+        {
+            storyPanel.SetActive(true);
+        }
+        else
+        {
+            storyPanel.SetActive(false);
+        }
+    }
+
     private void OnEnable()
     {
         AudioMaster.Instance.Play("MainMenuTheme");
@@ -532,7 +552,10 @@ public class MenuCanvas : MonoBehaviour
 
     private void OnDisable()
     {
-        AudioMaster.Instance.StopPlaying("MainMenuTheme");
+        if (AudioMaster.Instance)
+        {
+            AudioMaster.Instance.StopPlaying("MainMenuTheme");
+        }
     }
 }
 #pragma warning restore 0649
