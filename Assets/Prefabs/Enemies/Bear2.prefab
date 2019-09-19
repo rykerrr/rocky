@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 1002565869743029334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.15, y: 2.169363, z: -0.052734375}
-  m_LocalScale: {x: 0.69731903, y: 0.765695, z: 1}
+  m_LocalScale: {x: 0.9260481, y: 0.9261058, z: 1}
   m_Children:
   - {fileID: 1002565870216391530}
   - {fileID: 5658749336329813549}
@@ -128,7 +128,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -203,7 +202,7 @@ MonoBehaviour:
   plr: {fileID: 0}
   enUi: {fileID: 0}
   enStats:
-    maxHP: 30
+    maxHP: 43
     expOnDeath: 45
 --- !u!114 &1002565869743029338
 MonoBehaviour:
@@ -226,7 +225,7 @@ MonoBehaviour:
   playerCheckDelay: 4
   attackDelay: 1.2
   speed: 0.13
-  dmg: 8
+  dmg: 10
 --- !u!61 &1002565869743029339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -389,6 +388,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1002565869743029342}
     m_Modifications:
+    - target: {fileID: 6331994041036728648, guid: d599a413a7ade3640a1821c4702c7956,
+        type: 3}
+      propertyPath: m_Name
+      value: MinimapRender
+      objectReference: {fileID: 0}
     - target: {fileID: 6331994041036728655, guid: d599a413a7ade3640a1821c4702c7956,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -503,11 +507,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.306003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6331994041036728648, guid: d599a413a7ade3640a1821c4702c7956,
-        type: 3}
-      propertyPath: m_Name
-      value: MinimapRender
       objectReference: {fileID: 0}
     - target: {fileID: 6331994040652781286, guid: d599a413a7ade3640a1821c4702c7956,
         type: 3}

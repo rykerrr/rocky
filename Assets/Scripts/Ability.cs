@@ -12,5 +12,7 @@ public abstract class Ability : MonoBehaviour
     public Sprite SkillImg => skillImg;
     public string SkillDesc => skillDesc;
     public string SkillName => skillName;
+
+    public abstract void SkillCall();
 }
 #pragma warning restore 0649

@@ -28,6 +28,7 @@ public abstract class Poolable : MonoBehaviour
     /// </summary>
     public void ReturnToPool()
     {
+        gameObject.transform.parent = GameMaster.Instance.WaveSpawnerReference.PooledContainer;
         if (this.Reset())
         {
             var type = this.GetType();
@@ -43,8 +44,6 @@ public abstract class Poolable : MonoBehaviour
                 objPool.Add(nameOfKey, queue);
             }
         }
-
-        gameObject.transform.parent = GameMaster.Instance.WaveSpawnerReference.PooledContainer;
     }
 
     /// <summary>
@@ -69,5 +68,10 @@ public abstract class Poolable : MonoBehaviour
     {
         var prefCl = Instantiate(pref);
         return prefCl.gameObject;
+    }
+
+    public static void Clear()
+    {
+        objPool.Clear();
     }
 }

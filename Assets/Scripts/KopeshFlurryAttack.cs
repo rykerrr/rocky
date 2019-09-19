@@ -9,6 +9,7 @@ public class KopeshFlurryAttack : Ability
 
     [SerializeField] private float duration;
     [SerializeField] private float skillDelay;
+    [SerializeField] private float flurrySwingDelay = 0.3f;
 
     private float skillTimer;
 
@@ -17,7 +18,6 @@ public class KopeshFlurryAttack : Ability
     private PlrHUD plrHD;
     private bool isAttacking;
 
-    private float flurrySwingDelay = 0.3f;
     private float flurrySwingTimer;
 
     private void Start()
@@ -36,7 +36,7 @@ public class KopeshFlurryAttack : Ability
         }
     }
 
-    public void SkillCall()
+    public override void SkillCall()
     {
         if (!anim.GetBool("swingingNow") && !anim.GetBool("flurryAttack") && Time.time > skillTimer)
         {

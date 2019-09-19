@@ -321,7 +321,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -423,12 +422,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b93bde022cb3b54e9017823966a1da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 60
+  dmg: 32
   dmgBuf: 0
   swingDelay: 0.1
-  expPerHit: 5
+  expPerHit: 8
   numOfAnims: 1
-  dmgPerStrPoint: 7
+  dmgPerStrPoint: 6
   swinging: 0
   swingTime: 0
   rotSpd: 0
@@ -448,8 +447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillImg: {fileID: 21300000, guid: aaf9b9208f5f37f4f9fb0508d4488c2b, type: 3}
-  skillDesc: Shoot out a holy greatsword in the form of a returning boomerang to
-    cleanse the enemies.
+  skillDesc: Shoot out a holy greatsword in the form of a returning boomerang to cleanse
+    the enemies.
   skillName: 'Holy Greatsword '
   plr: {fileID: 0}
   holySwordPref: {fileID: 2895643857867275957, guid: f8f54d371de00884ebf53490f5d9326b,

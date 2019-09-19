@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 6883948670017090864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.88, y: 1.74, z: -0.052734375}
-  m_LocalScale: {x: 0.69731903, y: 0.765695, z: 1}
+  m_LocalScale: {x: 0.65, y: 0.7, z: 1}
   m_Children:
   - {fileID: 62402543}
   - {fileID: 6755024626726212382}
@@ -209,7 +209,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -284,8 +283,8 @@ MonoBehaviour:
   plr: {fileID: 0}
   enUi: {fileID: 0}
   enStats:
-    maxHP: 9
-    expOnDeath: 6
+    maxHP: 11
+    expOnDeath: 8
 --- !u!114 &6883948670017096395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +370,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6883948670017096397}
     m_Modifications:
+    - target: {fileID: 6331994041036728648, guid: d599a413a7ade3640a1821c4702c7956,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyRender
+      objectReference: {fileID: 0}
     - target: {fileID: 6331994041036728655, guid: d599a413a7ade3640a1821c4702c7956,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -485,11 +489,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.306003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6331994041036728648, guid: d599a413a7ade3640a1821c4702c7956,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyRender
       objectReference: {fileID: 0}
     - target: {fileID: 6331994040652781286, guid: d599a413a7ade3640a1821c4702c7956,
         type: 3}

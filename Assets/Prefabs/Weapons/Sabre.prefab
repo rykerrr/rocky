@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -144,12 +145,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b93bde022cb3b54e9017823966a1da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 9
+  dmg: 8
   dmgBuf: 0
   swingDelay: 0.1
   expPerHit: 3
   numOfAnims: 2
-  dmgPerStrPoint: 1
+  dmgPerStrPoint: 0.7
   swinging: 0
   swingTime: 0
   rotSpd: 0
@@ -224,11 +225,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7981198319396083947}
     m_Modifications:
-    - target: {fileID: 2441275034642002541, guid: 68e9d1aa603962f4ba7494950442afbc,
-        type: 3}
-      propertyPath: m_Name
-      value: Hands
-      objectReference: {fileID: 0}
     - target: {fileID: 1265208688065587500, guid: 68e9d1aa603962f4ba7494950442afbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,6 +285,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.50351614
       objectReference: {fileID: 0}
+    - target: {fileID: 2441275034642002541, guid: 68e9d1aa603962f4ba7494950442afbc,
+        type: 3}
+      propertyPath: m_Name
+      value: Hands
+      objectReference: {fileID: 0}
     - target: {fileID: 7947987004299391377, guid: 68e9d1aa603962f4ba7494950442afbc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -309,11 +310,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7981198319396083947}
     m_Modifications:
-    - target: {fileID: 2102344948864334645, guid: 5e6544daaaf57e548ae19f26369e458d,
-        type: 3}
-      propertyPath: m_Name
-      value: Trail (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6004775895895877233, guid: 5e6544daaaf57e548ae19f26369e458d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -379,6 +375,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.0000002
       objectReference: {fileID: 0}
+    - target: {fileID: 2102344948864334645, guid: 5e6544daaaf57e548ae19f26369e458d,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e6544daaaf57e548ae19f26369e458d, type: 3}
 --- !u!4 &7756210217892909402 stripped
@@ -394,11 +395,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7981198319396083947}
     m_Modifications:
-    - target: {fileID: 2102344948864334645, guid: 5e6544daaaf57e548ae19f26369e458d,
-        type: 3}
-      propertyPath: m_Name
-      value: Trail
-      objectReference: {fileID: 0}
     - target: {fileID: 6004775895895877233, guid: 5e6544daaaf57e548ae19f26369e458d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -463,6 +459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102344948864334645, guid: 5e6544daaaf57e548ae19f26369e458d,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e6544daaaf57e548ae19f26369e458d, type: 3}

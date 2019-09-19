@@ -64,8 +64,10 @@ public class HolyZweiSkill : Ability
         }
     }
 
-    public void SkillCall()
+    public override void SkillCall()
     {
+        if (!anim) anim = GetComponent<Animator>();
+
         if (Time.time > delayTimer && !throwing && !returning && !anim.GetBool("swingingNow"))
         {
             StartCoroutine(startThrow());
@@ -74,6 +76,7 @@ public class HolyZweiSkill : Ability
 
     private IEnumerator startThrow()
     {
+        delayTimer = Time.time * 3f;
         plrHD.ChangeSkillCooldown(throwDelay, throwDelay);
         anim.SetBool("bladeThrow", true);
         buff = wep.dmg;

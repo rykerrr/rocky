@@ -63,12 +63,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b93bde022cb3b54e9017823966a1da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 24
+  dmg: 16
   dmgBuf: 0
   swingDelay: 0.1
   expPerHit: 7
   numOfAnims: 2
-  dmgPerStrPoint: 10
+  dmgPerStrPoint: 3
   swinging: 0
   swingTime: 0
   rotSpd: 0
@@ -184,6 +184,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -214,11 +215,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5445232900874282473}
     m_Modifications:
-    - target: {fileID: 2441275034642002541, guid: 68e9d1aa603962f4ba7494950442afbc,
-        type: 3}
-      propertyPath: m_Name
-      value: Hands
-      objectReference: {fileID: 0}
     - target: {fileID: 1265208688065587500, guid: 68e9d1aa603962f4ba7494950442afbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -283,6 +279,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5420803
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441275034642002541, guid: 68e9d1aa603962f4ba7494950442afbc,
+        type: 3}
+      propertyPath: m_Name
+      value: Hands
       objectReference: {fileID: 0}
     - target: {fileID: 7947987004299391377, guid: 68e9d1aa603962f4ba7494950442afbc,
         type: 3}

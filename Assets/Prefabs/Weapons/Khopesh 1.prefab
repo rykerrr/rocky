@@ -47,7 +47,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -147,12 +146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b93bde022cb3b54e9017823966a1da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 14
+  dmg: 13
   dmgBuf: 0
   swingDelay: 0.1
   expPerHit: 3
   numOfAnims: 3
-  dmgPerStrPoint: 3
+  dmgPerStrPoint: 2.4
   swinging: 0
   swingTime: 0
   rotSpd: 0
@@ -172,12 +171,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillImg: {fileID: 21300000, guid: dd1de3c7807dc274fb6017abb2004a8d, type: 3}
-  skillDesc: Puncture the enemy using a high-volume fast stabbing technique with
-    both of your swords.
+  skillDesc: Puncture the enemy using a high-volume fast stabbing technique with both
+    of your swords.
   skillName: Flurry Attack
-  dmg: 15
+  dmg: 10
   duration: 2.5
   skillDelay: 3
+  flurrySwingDelay: 0.1
 --- !u!95 &896380274195106326
 Animator:
   serializedVersion: 3
@@ -269,7 +269,6 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -406,7 +405,6 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -544,7 +542,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

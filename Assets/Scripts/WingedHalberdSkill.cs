@@ -46,7 +46,7 @@ public class WingedHalberdSkill : Ability
         }
     }
 
-    public void SkillCall()
+    public override void SkillCall()
     {
         if (!anim.GetBool("swingingNow") && !anim.GetBool("windSlice") && Time.time > throwTimer)
         {

@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
         [SerializeField] private Transform plr;
 
         [SerializeField] private int startXPToLevUp = 30;
-        [SerializeField] private int hpGainPerLev = 1;
+        [SerializeField] private int hpGainLevPercent = 20;
         [SerializeField] private int hp;
         [SerializeField] private int maxHP;
 
@@ -110,7 +110,9 @@ public class Player : MonoBehaviour
 
         private void CheckIfMaxHealthCorrect()
         {
-            maxHP = baseMaxHP + (level * hpGainPerLev) + (vitalityStat * 15) + (strengthStat * 5);
+            float percent = 1 + (60f / 100f) * (vitalityStat) + (24f / 100f) * (strengthStat) + (12f / 100f) * (level);
+            float newMaxHp = baseMaxHP * percent;
+            maxHP = (int) newMaxHp;
         }
 
         public static void IncreaseStat(int statNum)
@@ -150,6 +152,10 @@ public class Player : MonoBehaviour
                 dexterityStat = 0;
                 strengthStat = 0;
                 vitalityStat = 0;
+
+                stoneResource = 0;
+                woodResource = 0;
+                foodResource = 0;
 
                 statResetsLeft--;
                 OnStatsChanged(0);

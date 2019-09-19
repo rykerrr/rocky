@@ -32,7 +32,7 @@ public class GhostBladeSkill : Ability
         }
     }
 
-    public void SkillCall()
+    public override void SkillCall()
     {
         if (Time.time > attackTimer && !anim.GetBool("ghostSkill") && !anim.GetBool("swingingNow") && !attacking)
         {

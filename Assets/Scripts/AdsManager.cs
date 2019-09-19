@@ -1,9 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
-#if UNITY_ADS
 using UnityEngine.Advertisements;
-#endif
 
 public class AdsManager : MonoBehaviour // literally the "manager", plays ads and then runs the callbacks given to it
 {
@@ -14,14 +11,14 @@ public class AdsManager : MonoBehaviour // literally the "manager", plays ads an
     {
         get
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = FindObjectOfType<AdsManager>();
-                if(instance == null)
+                if (instance == null)
                 {
                     instance = new GameObject("Ad Manager Gameobject", typeof(AdsManager)).GetComponent<AdsManager>();
 
-                    if(instance == null)
+                    if (instance == null)
                     {
                         throw new Exception("AdsManager can't be spawned in...");
                     }
@@ -43,12 +40,15 @@ public class AdsManager : MonoBehaviour // literally the "manager", plays ads an
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Destroy(gameObject);
         }
+        else
+        {
+            instance = this;
+        }
 
-        instance = this;
         Advertisement.Initialize(gameID, testMode);
     }
 
@@ -57,22 +57,18 @@ public class AdsManager : MonoBehaviour // literally the "manager", plays ads an
         DontDestroyOnLoad(gameObject);
     }
 
-    public void ShowRegularAd(Action<ShowResult> callBack)
+    public void ShowRegularAd(Action<ShowResult> callBack = null)
     {
-#if UNITY_ADS
-        if(Advertisement.IsReady(normalAdPlacementID))
+        if (Advertisement.IsReady(normalAdPlacementID))
         {
             ShowOptions so = new ShowOptions();
             so.resultCallback = callBack; // the result callback is just an action that gets called at the end
             Advertisement.Show(normalAdPlacementID, so);
         }
-#else
-#endif
     }
 
-    public void ShowRewardedAd(Action<ShowResult> callBack)
+    public void ShowRewardedAd(Action<ShowResult> callBack = null)
     {
-#if UNITY_ADS
         if (Advertisement.IsReady(rewardedAdPlacementID))
         {
             ShowOptions so = new ShowOptions();
@@ -80,6 +76,4 @@ public class AdsManager : MonoBehaviour // literally the "manager", plays ads an
             Advertisement.Show(rewardedAdPlacementID, so);
         }
     }
-#else
-#endif
 }

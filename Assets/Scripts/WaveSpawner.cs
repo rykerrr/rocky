@@ -72,7 +72,7 @@ public class WaveSpawner : MonoBehaviour
             curWave = 0;
             curState = States.WAITING;
             difficultyMultiplier += 0.50f;
-            coinMultiplier += 0.3f;
+            coinMultiplier += 0.4f;
             EXPMultiplier += 0.75f;
             waveDelayTimer = (timeBetweenWaves * 2f) + Time.time;
         }
@@ -164,7 +164,7 @@ public class WaveSpawner : MonoBehaviour
 
         enemy.transform.parent = enContainer;
         Enemy en = waves[curWave].enemyList[rng].GetComponent<Enemy>();
-        int _hp = Mathf.RoundToInt((Random.Range((en.enStats.RetMaxHP() / 1.7f), (en.enStats.RetMaxHP() * 1.5f)) * difficultyMultiplier) * (0.2f * (GameMaster.weaponIdOnStart + 1)));
+        int _hp = Mathf.RoundToInt((Random.Range((en.enStats.RetMaxHP() / 1.4f), (en.enStats.RetMaxHP() * 1.2f)) * difficultyMultiplier) * (0.3f * (GameMaster.weaponIdOnStart + 1)));
         en = enemy.GetComponent<Enemy>();
         en.SetMaxHealth(_hp);
         enemySpawnTimer = waves[curWave].timeBetweenSpawn + Time.time;
@@ -173,6 +173,9 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnBoss()
     {
         Transform curBoss = Instantiate(waves[curWave].bossPref, bossSpawnLocation.position, Quaternion.identity) as Transform;
+        Enemy boss = curBoss.GetComponent<Enemy>();
+        int _hp = Mathf.RoundToInt(difficultyMultiplier * boss.enStats.Health * (0.2f * (GameMaster.weaponIdOnStart + 1)));
+        boss.SetMaxHealth(_hp);
         curBoss.parent = enContainer;
     }
 

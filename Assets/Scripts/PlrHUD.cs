@@ -23,6 +23,7 @@ public class PlrHUD : MonoBehaviour
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject unallocatedStatPointsNotifier;
+    [SerializeField] private GameObject tripleYourCoinsAd;
     [SerializeField] private Transform levelUpPart;
     [SerializeField] private Transform waveStartButton;
     [SerializeField] private Transform statManagerUI;
@@ -495,7 +496,24 @@ public class PlrHUD : MonoBehaviour
         Time.timeScale = gameSpeed;
         pauseButton.SetActive(!pauseButton.activeSelf);
         pauseMenuPanel.SetActive(!pauseMenuPanel.activeSelf);
-        coinsYouEarn.text = "You earn: " + StatManager.ConvertToCoins(Player.stoneResource + Player.woodResource + Player.foodResource, wavSpawner.wavesSurvived, false) + " coins!";
+        int coins = StatManager.ConvertToCoins(Player.stoneResource + Player.woodResource + Player.foodResource, wavSpawner.wavesSurvived, false);
+        coins += StatManager.bonusCoins;
+        coinsYouEarn.text = "You earn: " + (coins + StatManager.bonusCoins).ToString() + " coins!";
+    }
+
+    public void GetCoinBonus()
+    {
+        int coins = StatManager.ConvertToCoins(Player.stoneResource + Player.woodResource + Player.foodResource, wavSpawner.wavesSurvived, false);
+
+        AdsManager.Instance.ShowRewardedAd(so =>
+        {
+            if(so == UnityEngine.Advertisements.ShowResult.Finished)
+            {
+                StatManager.bonusCoins = coins * 3;
+                coinsYouEarn.text = "You earn: " + (coins + StatManager.bonusCoins).ToString() + " coins!";
+                tripleYourCoinsAd.SetActive(false);
+            }
+        });
     }
 
     public void PlayButtonSound()

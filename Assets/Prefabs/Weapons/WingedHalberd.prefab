@@ -65,12 +65,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b93bde022cb3b54e9017823966a1da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 34
+  dmg: 43
   dmgBuf: 0
   swingDelay: 0.1
   expPerHit: 6
   numOfAnims: 1
-  dmgPerStrPoint: 5
+  dmgPerStrPoint: 2.4
   swinging: 0
   swingTime: 0
   rotSpd: 0
@@ -97,12 +97,12 @@ MonoBehaviour:
   slicePref: {fileID: 8360332346015838229, guid: 645ecaa3b6614b1458101ab51aef3423,
     type: 3}
   anim: {fileID: 0}
-  speed: 11
+  speed: 8
   throwDelay: 3
-  upTime: 1.5
+  upTime: 2
   waitTimeBeforeSwing: 1.45
   amtOfPierces: 5
-  dmg: 150
+  dmg: 160
 --- !u!61 &5358724065555264045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,7 +193,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

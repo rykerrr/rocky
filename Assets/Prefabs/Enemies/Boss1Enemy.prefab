@@ -136,7 +136,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -303,7 +302,7 @@ MonoBehaviour:
   plr: {fileID: 0}
   enUi: {fileID: 0}
   enStats:
-    maxHP: 90
+    maxHP: 550
     expOnDeath: 600
 --- !u!114 &2220618632034336685
 MonoBehaviour:
@@ -401,6 +400,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2220618632034336596}
     m_Modifications:
+    - target: {fileID: 1296150538367638933, guid: c196457517f9c004a93b04e297fb93f4,
+        type: 3}
+      propertyPath: m_Name
+      value: BossRender
+      objectReference: {fileID: 0}
     - target: {fileID: 753417477, guid: c196457517f9c004a93b04e297fb93f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -492,11 +496,6 @@ PrefabInstance:
     - target: {fileID: 753417477, guid: c196457517f9c004a93b04e297fb93f4, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.47213808
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296150538367638933, guid: c196457517f9c004a93b04e297fb93f4,
-        type: 3}
-      propertyPath: m_Name
-      value: BossRender
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c196457517f9c004a93b04e297fb93f4, type: 3}

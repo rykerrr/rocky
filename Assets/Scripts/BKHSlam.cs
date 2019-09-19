@@ -39,7 +39,7 @@ public class BKHSlam : Ability
         }
     }
 
-    public void SkillCall()
+    public override void SkillCall()
     {
         if (!anim.GetBool("swingingNow") && !anim.GetBool("groundSlam") && Time.time > slamTimer)
         {

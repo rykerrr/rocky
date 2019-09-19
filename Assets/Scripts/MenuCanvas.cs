@@ -64,12 +64,6 @@ public class MenuCanvas : MonoBehaviour
         StatManager.currentCoins = PlayerPrefs.GetInt("Coins");
         StatManager.currentWeapon = PlayerPrefs.GetInt("WeaponID");
 
-        if (StatManager.currentCoins == 0)
-        {
-            StatManager.currentCoins = 500000;
-            StatManager.SaveChanges();
-        }
-
         coinColor = coinText.color;
         ChangeCurWeaponImg();
     }
@@ -264,7 +258,7 @@ public class MenuCanvas : MonoBehaviour
         }
         else
         {
-            OpenMoneyPrompt("You need " + (weapons[wepID].priceOfWeapon - StatManager.currentCoins).ToString() + " more coins! Watch an ad to get " + notEnCoinsAdReward + " coins and buy the weapon?", BuyWeaponTransaction);
+            OpenMoneyPrompt("You need " + (weapons[wepID].priceOfWeapon - StatManager.currentCoins).ToString() + " more coins! Watch an ad to get " + notEnCoinsAdReward + " coins and buy the weapon?");
         }
 
         ChangeCurWeaponImg();
@@ -315,7 +309,14 @@ public class MenuCanvas : MonoBehaviour
     {
         notEnoughMoneyPrompt.SetActive(true);
         notEnoughMoneyText.text = msg;
-        callback?.Invoke();
+
+        if (callback != null)
+        {
+            callback.Invoke();
+        }
+
+
+        return;
     }
 
     public void CloseTransaction()
@@ -333,6 +334,8 @@ public class MenuCanvas : MonoBehaviour
         Player.Stats.hat = _hat;
         Player.Stats.name = _hat.characterName;
         confirmButton.onClick.RemoveAllListeners();
+        StatManager.bonusCoins = 0;
+        AdsManager.Instance.ShowRegularAd();
         SceneManager.LoadScene("MatchScene");
     }
 
@@ -346,6 +349,8 @@ public class MenuCanvas : MonoBehaviour
     {
         // Player.Stats.name = nameField.text;
         GameMaster.normalStart = true;
+        StatManager.bonusCoins = 0;
+        AdsManager.Instance.ShowRegularAd();
         SceneManager.LoadScene("MatchScene");
     }
 

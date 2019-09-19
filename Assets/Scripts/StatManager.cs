@@ -6,13 +6,14 @@ public static class StatManager
 {
     public static int currentCoins;
     public static int currentWeapon = 0;
+    public static int bonusCoins;
 
     public static int ConvertToCoins(int resourcesAmn, int wavesSurvived, bool saveAfterConversion = true)
     {
         int buffer;
 
-        buffer = Mathf.RoundToInt((((resourcesAmn / 50)) + wavesSurvived) * WaveSpawner.coinMultiplier);
-        buffer += ((GameMaster.weaponIdOnStart / 100) * buffer);
+        buffer = Mathf.RoundToInt((((resourcesAmn / 25)) + (wavesSurvived * 3)) * WaveSpawner.coinMultiplier);
+        buffer += Mathf.RoundToInt(((GameMaster.weaponIdOnStart * 5.4f) / 100) * buffer);
 
         if (saveAfterConversion)
         {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 #pragma warning disable 0649
 public class WeaponChange : MonoBehaviour
 {
-    public event Action skillCall = delegate { };
+    public Action skillCall = delegate { };
     public static WeaponChange Instance { get; private set; }
 
     public Transform[] weaponList;
@@ -210,6 +210,11 @@ public class WeaponChange : MonoBehaviour
                     ChangeWeapon(weaponObjectsInInventory[0], 1, weaponObjectsInInventory[0].GetComponent<Weapon>().dmg);
                 }
                 timeToWait = switchDelay + Time.time;
+
+                if(currentWeaponObject.GetComponent<Ability>())
+                {
+                    skillCall = currentWeaponObject.GetComponent<Ability>().SkillCall;
+                }
             }
         }
 

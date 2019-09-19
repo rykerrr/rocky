@@ -48,13 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db42fe2c02b69bb46aa289d953035724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 9
+  dmg: 12
   plr: {fileID: 0}
-  speed: 800
+  speed: 900
   throwTime: 1.5
   throwDelay: 2
   slowSpd: 0.8
-  dmgPerDexPoint: 3
+  dmgPerDexPoint: 5
   throwing: 0
   returning: 0
 --- !u!60 &2807356582768208334

@@ -137,13 +137,11 @@ public class Weapon : MonoBehaviour
     {
         while (GameMaster.Instance == null)
         {
-            Debug.Log("GameMaster.Instance is null");
             yield return new WaitForSecondsRealtime(1f);
         }
 
         while (GameMaster.Instance.hud == null)
         {
-            Debug.Log("GameMaster.Instance.hud is null");
             yield return new WaitForSecondsRealtime(1f);
         }
 

@@ -39,7 +39,7 @@ public class LongswordStab : Ability
         }
     }
 
-    public void SkillCall()
+    public override void SkillCall()
     {
         if (Time.time > attackTimer && !anim.GetBool("stabSkill") && !anim.GetBool("swingingNow") && !attacking)
         {

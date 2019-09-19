@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfd2a01b5fc9fe42b448d908c2e9dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 23
+  dmg: 21
   dmgBoostPerDexPoint: 2
   arrowCost: 3
   minDelayAmn: -1

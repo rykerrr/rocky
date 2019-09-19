@@ -45,6 +45,7 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField] private Transform[] plrRespawnPoints;
     [SerializeField] private Transform plrPref;
+    [SerializeField] private GameObject returnToMenuPanel;
 
     [SerializeField] private float respawnTime;
 
@@ -181,9 +182,10 @@ public class GameMaster : MonoBehaviour
             Destroy(partClone.gameObject, deathTimer);
             Destroy(plr.gameObject, deathTimer);
 
-            if (lives < 0)
+            if (lives <= 0)
             {
-                ReturnToMenu();
+                returnToMenuPanel.SetActive(true);
+                hud.Pause(0f);
             }
 
             camFoll.SmoothDampToPos(plrRespawnPoints[h].position, respawnTime);
@@ -201,23 +203,17 @@ public class GameMaster : MonoBehaviour
         Player.Stats.name = null;
         Player.Stats.hat = null;
 
+        StatManager.ConvertToCoins(Player.stoneResource + Player.woodResource + Player.foodResource, wavSpawner.wavesSurvived, true);
+        StatManager.currentCoins += StatManager.bonusCoins;
+        StatManager.SaveChanges();
+
+        hud.ResetStats();
+        Poolable.Clear();
+
         hud.Pause(1f);
 
-        if (timeForAds == 1)
-        {
-            timeForAds = 0;
-            AdsManager.Instance.ShowRegularAd(OnDeathAdClosed);
-        }
-        else
-        {
-            timeForAds++;
-            OnDeathAdClosed();
-        }
-    }
-
-    private void OnDeathAdClosed(ShowResult so = 0)
-    {
-        StatManager.ConvertToCoins(Player.stoneResource + Player.woodResource + Player.foodResource, wavSpawner.wavesSurvived);
+        StatManager.bonusCoins = 0;
+        AdsManager.Instance.ShowRegularAd();
         SceneManager.LoadScene("MainMenu");
     }
 

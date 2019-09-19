@@ -45,7 +45,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -159,7 +158,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -331,7 +329,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -470,7 +467,7 @@ MonoBehaviour:
   plr: {fileID: 0}
   enUi: {fileID: 0}
   enStats:
-    maxHP: 20
+    maxHP: 92
     expOnDeath: 50
 --- !u!114 &4065595492804509217
 MonoBehaviour:
@@ -625,7 +622,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -668,6 +664,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4065595492804509400}
     m_Modifications:
+    - target: {fileID: 6331994041036728648, guid: d599a413a7ade3640a1821c4702c7956,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyRender
+      objectReference: {fileID: 0}
     - target: {fileID: 6331994041036728655, guid: d599a413a7ade3640a1821c4702c7956,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -782,11 +783,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.3160337
-      objectReference: {fileID: 0}
-    - target: {fileID: 6331994041036728648, guid: d599a413a7ade3640a1821c4702c7956,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyRender
       objectReference: {fileID: 0}
     - target: {fileID: 6331994040652781286, guid: d599a413a7ade3640a1821c4702c7956,
         type: 3}
